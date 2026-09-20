@@ -13,9 +13,6 @@ The project was developed using **Python in Visual Studio Code (VS Code)**. It i
 👉 **Streamlit App:**
 https://telco-customer-churn-bjboxtcwxagu5secvyvbxj.streamlit.app/
 
-> **Note:** Replace this link with your Forest Fire Prediction Streamlit app link if you have deployed it separately.
-
----
 
 ## 🎯 Objectives
 
