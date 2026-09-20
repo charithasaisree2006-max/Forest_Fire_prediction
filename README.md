@@ -11,7 +11,7 @@ The project was developed using **Python in Visual Studio Code (VS Code)**. It i
 ## 🚀 Live Demo
 
 👉 **Streamlit App:**
-https://telco-customer-churn-bjboxtcwxagu5secvyvbxj.streamlit.app/
+https://forestfireprediction-9sfnndxydg9ztwu7mjprtz.streamlit.app/
 
 
 ## 🎯 Objectives
