@@ -4,9 +4,7 @@
 
 This project uses **Machine Learning** to predict the possibility of forest fires based on environmental and weather-related conditions.
 
-The project includes data preprocessing, exploratory data analysis, model training, evaluation, and prediction.
-
-The implementation is developed using **Python and Jupyter Notebook**.
+The project was developed using **Python in Visual Studio Code (VS Code)**. It includes data preprocessing, exploratory data analysis, Machine Learning model training, evaluation, and a **Streamlit web application** for prediction.
 
 ---
 
@@ -15,7 +13,7 @@ The implementation is developed using **Python and Jupyter Notebook**.
 👉 **Streamlit App:**
 https://telco-customer-churn-bjboxtcwxagu5secvyvbxj.streamlit.app/
 
-> **Note:** Please replace the above link with your Forest Fire Prediction Streamlit deployment link if you have a separate app for this project.
+> **Note:** Replace this link with your Forest Fire Prediction Streamlit app link if you have deployed it separately.
 
 ---
 
@@ -25,20 +23,21 @@ https://telco-customer-churn-bjboxtcwxagu5secvyvbxj.streamlit.app/
 * Analyze environmental and weather-related factors.
 * Perform data preprocessing and exploratory data analysis.
 * Train and evaluate a Machine Learning model.
-* Generate predictions for new input data.
+* Provide predictions through a user-friendly Streamlit application.
 
 ---
 
 ## 🛠️ Technologies Used
 
-* Python
-* Jupyter Notebook
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* Streamlit
+* **Python**
+* **Visual Studio Code (VS Code)**
+* **Pandas**
+* **NumPy**
+* **Matplotlib**
+* **Seaborn**
+* **Scikit-learn**
+* **Streamlit**
+* **Jupyter Notebook**
 
 ---
 
@@ -48,30 +47,21 @@ https://telco-customer-churn-bjboxtcwxagu5secvyvbxj.streamlit.app/
 Forest_Fire_prediction/
 │
 ├── FOREST_FIRE_PREDICTION project.ipynb
+├── app.py
+├── requirements.txt
 ├── README.md
 └── Dataset/
 ```
 
----
+### 📄 File Description
 
-## 📊 Dataset
-
-The dataset contains environmental and meteorological information related to forest fires.
-
-The features may include:
-
-* Temperature
-* Relative Humidity
-* Wind Speed
-* Rainfall
-* FFMC
-* DMC
-* DC
-* ISI
-* FWI
-* Other environmental parameters
-
-The target variable is used to determine forest-fire occurrence or risk.
+| File                                   | Description                                                           |
+| -------------------------------------- | --------------------------------------------------------------------- |
+| `FOREST_FIRE_PREDICTION project.ipynb` | Contains data analysis, preprocessing, model training, and evaluation |
+| `app.py`                               | Streamlit application for forest-fire prediction                      |
+| `requirements.txt`                     | Contains all required Python libraries                                |
+| `README.md`                            | Project documentation                                                 |
+| `Dataset/`                             | Contains the dataset used for the project                             |
 
 ---
 
@@ -97,50 +87,42 @@ Model Training
 Model Evaluation
    ↓
 Forest Fire Prediction
+   ↓
+Streamlit Web Application
 ```
 
 ---
 
-## 🔍 Exploratory Data Analysis
+## 📊 Dataset
 
-The project performs exploratory data analysis to understand the relationship between environmental conditions and forest-fire occurrence.
+The dataset contains environmental and meteorological information related to forest fires.
 
-The analysis includes:
+The features may include:
 
-* Checking missing values
-* Statistical analysis
-* Feature distributions
-* Correlation analysis
-* Data visualization
-* Identifying important environmental factors
-
----
-
-## 🤖 Machine Learning Model
-
-The dataset is preprocessed and divided into training and testing datasets.
-
-The Machine Learning model is trained using the training data and evaluated using the testing data.
-
-The trained model learns patterns from environmental conditions and uses them to predict forest-fire occurrence for new observations.
+* Temperature
+* Relative Humidity
+* Wind Speed
+* Rainfall
+* FFMC
+* DMC
+* DC
+* ISI
+* FWI
+* Other environmental parameters
 
 ---
 
-## 📈 Model Evaluation
+## 💻 Development Environment
 
-The model can be evaluated using:
+The project was developed and tested using:
 
-* Accuracy
-* Precision
-* Recall
-* F1-Score
-* Confusion Matrix
+**Visual Studio Code (VS Code)**
 
-These metrics help determine the performance of the trained Machine Learning model.
+Python was used for Machine Learning, data analysis, and application development.
 
 ---
 
-## 🚀 How to Run the Project
+## 🚀 How to Run the Project in VS Code
 
 ### 1. Clone the Repository
 
@@ -148,39 +130,53 @@ These metrics help determine the performance of the trained Machine Learning mod
 git clone https://github.com/your-username/Forest_Fire_prediction.git
 ```
 
-### 2. Navigate to the Project
+### 2. Open the Project in VS Code
+
+Open the `Forest_Fire_prediction` folder in **Visual Studio Code**.
+
+### 3. Create a Virtual Environment
 
 ```bash
-cd Forest_Fire_prediction
+python -m venv venv
 ```
 
-### 3. Install Required Libraries
+### 4. Activate the Virtual Environment
+
+**Windows:**
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn streamlit jupyter
+venv\Scripts\activate
 ```
 
-### 4. Open Jupyter Notebook
+### 5. Install Required Libraries
 
 ```bash
-jupyter notebook
+pip install -r requirements.txt
 ```
 
-### 5. Run the Notebook
+### 6. Run the Streamlit Application
 
-Open:
-
-```text
-FOREST_FIRE_PREDICTION project.ipynb
+```bash
+streamlit run app.py
 ```
 
-Run the cells sequentially to perform data analysis, train the model, evaluate the model, and generate predictions.
+The Streamlit application will open in your web browser.
+
+---
+
+## 📈 Model Evaluation
+
+The Machine Learning model is evaluated using appropriate performance metrics such as:
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+* Confusion Matrix
 
 ---
 
 ## 🌲 Applications
-
-This project can be useful for:
 
 * 🔥 Early identification of fire-prone conditions
 * 🌲 Forest monitoring
@@ -193,13 +189,12 @@ This project can be useful for:
 
 ## 🔮 Future Enhancements
 
-* Develop a dedicated Streamlit web application.
 * Integrate real-time weather data.
 * Use satellite and remote-sensing data.
 * Experiment with advanced Machine Learning and Deep Learning models.
 * Add location-based forest-fire risk visualization.
-* Deploy the application online.
-* Improve prediction accuracy with additional environmental features.
+* Improve prediction accuracy using additional environmental features.
+* Deploy the application on cloud platforms.
 
 ---
 
@@ -214,12 +209,6 @@ This project can be useful for:
 **Charitha Sai Sree**
 
 B.Tech – Artificial Intelligence & Machine Learning
-
----
-
-## ⭐ Acknowledgement
-
-This project was developed as part of a Machine Learning project to explore the application of Artificial Intelligence in environmental monitoring and forest-fire prediction.
 
 ---
 
