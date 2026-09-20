@@ -2,54 +2,21 @@
 
 ## 📌 Project Overview
 
-This project uses **Machine Learning** to predict forest-fire occurrence and estimate the burned forest area based on environmental, weather, and geographical factors.
+This project uses **Machine Learning** to predict the occurrence of forest fires based on environmental and weather-related conditions.
 
-The project is implemented using **Python and Jupyter Notebook** and uses the **Forest Fires dataset** for analysis and model training.
+The model analyzes factors such as temperature, humidity, wind, rainfall, and other environmental parameters to estimate the possibility of a forest fire.
+
+The project is implemented using **Python and Jupyter Notebook**.
 
 ---
 
 ## 🎯 Objectives
 
-The main objectives of this project are:
-
-* To explore and understand forest-fire data.
-* To analyze different environmental and weather-related factors.
-* To visualize relationships between the features.
-* To predict whether a forest fire will occur.
-* To estimate the approximate burned area.
-* To evaluate the performance of Machine Learning models.
-* To identify the most important features affecting forest fires.
-
----
-
-## 📊 Dataset
-
-The project uses the `forestfires.csv` dataset.
-
-The dataset contains **517 records and 13 features**.
-
-### Features
-
-| Feature | Description                                 |
-| ------- | ------------------------------------------- |
-| `X`     | X-coordinate of the observation             |
-| `Y`     | Y-coordinate of the observation             |
-| `month` | Month in which the observation was recorded |
-| `day`   | Day of the week                             |
-| `FFMC`  | Fine Fuel Moisture Code                     |
-| `DMC`   | Duff Moisture Code                          |
-| `DC`    | Drought Code                                |
-| `ISI`   | Initial Spread Index                        |
-| `temp`  | Temperature                                 |
-| `RH`    | Relative Humidity                           |
-| `wind`  | Wind speed                                  |
-| `rain`  | Rainfall                                    |
-| `area`  | Burned forest area                          |
-
-A new target variable called `fire_occurred` is created:
-
-* `1` → Fire occurred
-* `0` → No fire occurred
+* Predict the possibility of forest fires using Machine Learning.
+* Analyze environmental factors that contribute to forest fires.
+* Perform data preprocessing and exploratory data analysis.
+* Train and evaluate a Machine Learning model.
+* Build a reliable prediction system for forest-fire risk analysis.
 
 ---
 
@@ -65,276 +32,186 @@ A new target variable called `fire_occurred` is created:
 
 ---
 
-## 🤖 Machine Learning Models
-
-Two Random Forest models are used in this project:
-
-### 1. Random Forest Classifier
-
-The classifier predicts whether a forest fire occurs.
+## 📂 Project Structure
 
 ```text
-Input Features
-      ↓
-Data Preprocessing
-      ↓
-Random Forest Classifier
-      ↓
-Fire / No Fire
-```
-
-### 2. Random Forest Regressor
-
-The regression model estimates the burned forest area.
-
-```text
-Input Features
-      ↓
-Data Preprocessing
-      ↓
-Random Forest Regressor
-      ↓
-Estimated Burned Area
+Forest_Fire_prediction/
+│
+├── FOREST_FIRE_PREDICTION project.ipynb
+├── README.md
+└── Dataset
 ```
 
 ---
 
-## 🔄 Project Workflow
+## 📊 Dataset
+
+The dataset contains environmental and meteorological information related to forest fires.
+
+Typical features include:
+
+* Temperature
+* Relative Humidity
+* Wind Speed
+* Rainfall
+* FFMC
+* DMC
+* DC
+* ISI
+* FWI
+* Other environmental parameters
+
+The target variable is used to determine the forest-fire occurrence or risk.
+
+---
+
+## 🔄 Machine Learning Workflow
 
 ```text
 Dataset
    ↓
 Data Loading
    ↓
-Data Exploration
-   ↓
 Data Cleaning
    ↓
-Data Visualization
+Exploratory Data Analysis
    ↓
-Feature Engineering
+Data Preprocessing
+   ↓
+Feature Selection
    ↓
 Train-Test Split
    ↓
-Random Forest Classification
+Model Training
    ↓
-Classification Evaluation
+Model Evaluation
    ↓
-Random Forest Regression
-   ↓
-Regression Evaluation
-   ↓
-Sample Prediction
+Forest Fire Prediction
 ```
 
 ---
 
-## 📈 Data Analysis
+## 🔍 Exploratory Data Analysis
 
-The project performs several exploratory data analysis steps, including:
+The project performs exploratory data analysis to understand relationships between environmental factors and forest-fire occurrence.
 
-* Checking the shape and structure of the dataset.
-* Checking for missing values.
-* Generating statistical summaries.
-* Analyzing the burned-area distribution.
-* Studying correlations between numerical features.
-* Analyzing the number of observations by month.
-* Visualizing important relationships using graphs.
+The analysis includes:
 
-The dataset contains no missing values in the notebook analysis.
+* Checking missing values
+* Statistical analysis
+* Distribution analysis
+* Correlation analysis
+* Visualization of important features
+* Identification of patterns related to forest fires
 
 ---
 
-## 🔥 Fire Occurrence Prediction
+## 🤖 Machine Learning
 
-The original `area` feature is converted into a binary variable:
+The dataset is preprocessed and divided into training and testing datasets.
 
-```python
-df['fire_occurred'] = (df['area'] > 0).astype(int)
-```
+The Machine Learning model is trained using the training data and evaluated using the testing data.
 
-This allows the model to classify observations into:
+The model learns relationships between environmental conditions and forest-fire occurrence and uses these patterns to make predictions on new data.
 
-* **Fire occurred**
-* **No fire occurred**
+---
 
-Categorical variables such as `month` and `day` are converted into numerical features using one-hot encoding.
+## 📈 Model Evaluation
 
-A **Random Forest Classifier with 200 trees** is used for classification.
-
-### Classification Performance
-
-The notebook records an accuracy of approximately:
-
-**65.4%**
-
-The model is evaluated using:
+The trained model is evaluated using appropriate performance metrics such as:
 
 * Accuracy
 * Precision
 * Recall
-* F1-score
+* F1-Score
 * Confusion Matrix
 
+These metrics help measure how effectively the model predicts forest-fire conditions.
+
 ---
 
-## 🌳 Burned Area Prediction
+## 🚀 How to Run the Project
 
-The project also predicts the amount of forest area burned.
+### 1. Clone the Repository
 
-Because the `area` variable is highly skewed, a logarithmic transformation is applied:
-
-```python
-y_reg = np.log1p(df_encoded['area'])
+```bash
+git clone https://github.com/your-username/Forest_Fire_prediction.git
 ```
 
-A **Random Forest Regressor with 200 trees** is then trained.
+### 2. Navigate to the Project Folder
 
-### Regression Performance
-
-The notebook records:
-
-* **MAE:** 1.205
-* **RMSE:** 1.529
-* **R²:** -0.064
-
-An actual-vs-predicted plot is also generated to visualize regression performance.
-
----
-
-## 🧪 Sample Prediction
-
-The notebook includes a sample input containing environmental and weather conditions.
-
-The trained models are used to predict:
-
-* Whether a fire is likely to occur.
-* The probability of fire occurrence.
-* The estimated burned area.
-
-The sample prediction recorded in the notebook is approximately:
-
-```text
-Fire predicted: YES
-Fire probability: 0.56
-Estimated burned area: 2.12 hectares
+```bash
+cd Forest_Fire_prediction
 ```
 
----
-
-## 📁 Project Structure
-
-```text
-Forest-Fire-Prediction/
-│
-├── FOREST_FIRE_PREDICTION project.ipynb
-├── forestfires.csv
-└── README.md
-```
-
----
-
-## ▶️ How to Run the Project
-
-### Step 1: Install Python Libraries
-
-Install the required libraries using:
+### 3. Install Required Libraries
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 ```
 
-### Step 2: Open the Notebook
-
-Start Jupyter Notebook:
+### 4. Start Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-Then open:
+### 5. Open the Notebook
+
+Open:
 
 ```text
 FOREST_FIRE_PREDICTION project.ipynb
 ```
 
-### Step 3: Add the Dataset
-
-Make sure the following file is available:
-
-```text
-forestfires.csv
-```
-
-If you are using Google Colab, the notebook can load the dataset using:
-
-```python
-df = pd.read_csv("/content/forestfires.csv")
-```
-
-For local execution, use:
-
-```python
-df = pd.read_csv("forestfires.csv")
-```
-
-### Step 4: Run the Notebook
-
-Run all cells from beginning to end to reproduce:
-
-* Data analysis
-* Visualizations
-* Model training
-* Model evaluation
-* Feature importance
-* Sample predictions
+Run the cells sequentially to perform data analysis, train the model, evaluate it, and generate predictions.
 
 ---
 
-## ⚠️ Limitations
+## 💡 Applications
 
-This project has some limitations:
+Forest-fire prediction systems can help in:
 
-* The dataset contains only 517 observations.
-* The classification accuracy is around 65.4%.
-* The regression model has a negative R² score in the recorded experiment.
-* The model should not be considered a real-world emergency fire-warning system.
-* Additional environmental and geographical information could improve prediction performance.
-
----
-
-## 🚀 Future Improvements
-
-The project can be improved by:
-
-* Using larger and more recent datasets.
-* Performing hyperparameter tuning.
-* Applying cross-validation.
-* Comparing multiple Machine Learning algorithms.
-* Improving handling of imbalanced data.
-* Adding satellite imagery and vegetation data.
-* Including real-time weather information.
-* Developing a web application for predictions.
-* Saving the trained models for deployment.
-* Building a real-time forest-fire monitoring system.
+* 🔥 Early identification of fire-prone conditions
+* 🌲 Forest monitoring
+* 🚨 Disaster management
+* 🌍 Environmental protection
+* 🛰️ Forest and climate monitoring
+* 👨‍🚒 Supporting fire prevention and response planning
 
 ---
 
-## 📌 Conclusion
+## 🔮 Future Enhancements
 
-This project demonstrates an end-to-end **Machine Learning approach for forest-fire prediction**.
+* Develop a **Streamlit web application** for real-time prediction.
+* Integrate real-time weather data.
+* Use satellite and remote-sensing data.
+* Experiment with advanced Machine Learning and Deep Learning models.
+* Add geographical/location-based forest-fire risk visualization.
+* Deploy the application online.
 
-It includes:
+---
 
-* Data collection and exploration
-* Data preprocessing
-* Feature engineering
-* Data visualization
-* Classification
-* Regression
-* Model evaluation
-* Feature importance analysis
-* Sample prediction
+## 📌 Project Type
 
-The project provides a foundation for developing more advanced forest-fire monitoring and prediction systems using Machine Learning.
+**Machine Learning | Classification/Prediction | Environmental Data Analysis**
 
+---
+
+## 👨‍💻 Author
+
+**Charitha Sai Sree**
+
+B.Tech – Artificial Intelligence & Machine Learning
+
+---
+
+## ⭐ Acknowledgement
+
+This project was developed as part of a Machine Learning project to explore the application of Artificial Intelligence in environmental monitoring and forest-fire prediction.
+
+---
+
+## 📜 License
+
+This project is intended for educational and academic purposes.
