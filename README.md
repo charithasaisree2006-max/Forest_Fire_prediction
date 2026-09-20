@@ -7,15 +7,6 @@ This project uses **Machine Learning** to predict the occurrence of forest fires
 The model analyzes factors such as temperature, humidity, wind, rainfall, and other environmental parameters to estimate the possibility of a forest fire.
 
 The project is implemented using **Python and Jupyter Notebook**.
-# 🔥 Forest Fire Prediction
-
-## 📌 Project Overview
-
-This project uses **Machine Learning** to predict the occurrence of forest fires based on environmental and weather-related conditions.
-
-The model analyzes factors such as temperature, humidity, wind, rainfall, and other environmental parameters to estimate the possibility of a forest fire.
-
-The project is implemented using **Python and Jupyter Notebook**.
 
 ---
 
